@@ -1,6 +1,9 @@
 @use './helpers/fonts';
 @use './helpers/global';
 @use './helpers/extends';
+@use './helpers/normalize';
+@use './helpers/animation';
+
 
 @use './components/header.scss'
 // @use './Header/header.scss';

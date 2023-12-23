@@ -1,1 +1,247 @@
 @import './../helpers/global';
+@import './../helpers/animation';
+
+// @media (max-width: 769px) {}
+/**/
+.hidden {
+    display: none;
+}
+
+header {
+    position: relative;
+    padding-top: 50px;
+
+    min-height: 100vh;
+
+    @media (max-width: 769px) {
+        padding-top: 30px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+
+        width: 50%;
+        height: 50%;
+
+        background-image: url($header-bg-img-path);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .topNav {
+        position: relative;
+        z-index: 10;
+
+        border-radius: 100px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 34px;
+
+        background-color: $topNav-color;
+
+        @media (max-width: 1200px) {
+            padding: 14px 24px;
+        }
+
+        @media (max-width: 769px) {
+            position: absolute;
+            left: 14px;
+            right: 14px;
+            align-items: start;
+
+            height: 60px;
+        }
+
+        .logo {
+            img {
+                width: 155px;
+
+                @media (max-width: 1200px) {
+                    width: 110px;
+                }
+            }
+        }
+
+        .navContainer {
+            @media (max-width: 769px) {
+                display: none;
+            }
+
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 26px;
+
+                @media (max-width: 1200px) {
+                    gap: 18px;
+                }
+
+                @media (max-width: 769px) {
+                    // display: grid;
+                }
+
+                a {
+                    display: flex;
+                    padding: 12px 24px;
+                    border-radius: 82px;
+
+                    font-family: Lexend;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                    /* 27px */
+                    color: $text-color;
+
+                    @media (max-width: 1200px) {
+                        padding: 10px 18px;
+                        font-size: 14px;
+                    }
+
+                    &:hover {
+                        background: $border-color;
+                    }
+                }
+            }
+        }
+
+        .activeNavContainer {
+            display: none;
+
+            @media (max-width: 769px) {
+                order: 3;
+                opacity: 0;
+                grid-area: nav;
+                display: grid;
+                animation: openNavContainer 1s ease-in 1s forwards;
+
+                nav {
+                    display: grid;
+                }
+            }
+        }
+
+        .login {
+            display: flex;
+            gap: 30px;
+
+            @media (max-width: 1200px) {
+                gap: 20px;
+            }
+
+            @media (max-width: 769px) {
+                display: none;
+            }
+
+            .singUp {
+                font-family: Lexend;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                /* 27px */
+                color: $text-color;
+
+                @media (max-width: 1200px) {
+                    font-size: 14px;
+                }
+            }
+
+            .login {
+                display: flex;
+                padding: 14px 30px;
+                align-items: center;
+                border-radius: 82px;
+
+                font-family: Lexend;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                /* 27px */
+                color: $topNav-color;
+                background: $main-color;
+
+                @media (max-width: 1200px) {
+                    padding: 12px 24px;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .activeLogin {
+            display: none;
+
+            @media (max-width: 769px) {
+                position: absolute;
+                bottom: 10%;
+                width: 100%;
+                opacity: 0;
+                display: grid;
+                order: 4;
+                grid-area: link;
+
+                animation: openLogin 1s ease-in 1.5s forwards;
+            }
+        }
+
+        .navButton {
+            display: none;
+
+            @media (max-width: 769px) {
+                display: grid;
+                justify-content: end;
+
+                hr {
+                    width: 25px;
+                    height: 3px;
+                    margin: 4px;
+                    border: 0;
+
+                    transition-duration: 1s;
+
+                    background: $text-color;
+                }
+
+                .activeHr {
+                    
+                    &:first-child {
+                        transform: translate(0, 230%) rotate(45deg);
+                    }
+
+                    &:nth-child(2) {
+                        animation: hiddenHr 1s linear forwards;
+                    }
+
+                    &:last-child {
+                        transform: translate(0, -230%) rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .activeTopNav {
+        display: none;
+
+        @media (max-width: 769px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                'logo button'
+                'nav nav'
+                'link link';
+            align-items: start;
+            animation: openTopNav 1s linear forwards;
+        }
+    }
+
+    .closeTopNav{
+        animation: closeTopNav 1s ease-in-out forwards;
+    }
+}

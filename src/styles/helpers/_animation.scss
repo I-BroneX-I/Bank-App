@@ -1,0 +1,64 @@
+@import './global';
+
+@keyframes openTopNav {
+    0% {
+        height: 60px;
+        border-radius: 100px;
+    }
+
+    25% {
+        border-radius: 10px;
+    }
+
+    100% {
+        height: 90%;
+        border-radius: 10px;
+    }
+}
+
+@keyframes closeTopNav {
+    0% {
+        height: 90%;
+        border-radius: 10px;
+    }
+
+    75% {
+        height: 60px;
+        border: 10px;
+    }
+
+    100% {
+        height: 60px;
+        border-radius: 100px;
+    }
+}
+
+@keyframes openNavContainer {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes openLogin {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hiddenHr {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

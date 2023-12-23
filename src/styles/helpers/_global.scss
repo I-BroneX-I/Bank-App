@@ -1,2 +1,18 @@
-$s: red;
-$color: green;
+$bg-color: #1A1A1A;
+$main-color: #CAFF33;
+$text-color: #FFFFFF;
+$topNav-color: #1C1C1C;
+$border-color: #262626;
+
+/*  img  */
+$header-bg-img-path: './../assets/images/header_bg.png';
+
+/*  Content  */
+body{
+    background-color: $bg-color;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
