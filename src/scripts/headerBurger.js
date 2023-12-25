@@ -13,6 +13,7 @@ function observerWidth() {
         navContainer.classList.remove('activeNavContainer');
         login.classList.remove('activeLogin');
         topNav.classList.remove('closeTopNav');
+        document.body.style.overflow = 'scroll'
     }
 
     topNav.classList.remove('activeTopNav');
@@ -29,7 +30,7 @@ function toggleNav() {
     navContainer.classList.toggle('activeNavContainer');
     login.classList.toggle('activeLogin');
 
-    if(!topNav.classList.contains('activeTopNav')){
+    if (!topNav.classList.contains('activeTopNav')) {
         topNav.classList.add('closeTopNav');
     } else {
         topNav.classList.remove('closeTopNav');
@@ -37,6 +38,12 @@ function toggleNav() {
 
     for (const hr of hrs) {
         hr.classList.toggle('activeHr');
+    }
+
+    if (document.body.style.overflow == 'hidden') {
+        document.body.style.overflow = 'scroll'
+    } else {
+        document.body.style.overflow = 'hidden';
     }
 }
 
