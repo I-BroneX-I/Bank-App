@@ -424,8 +424,10 @@ header {
             }
 
             .info__button {
-                display: grid;
-                justify-content: center;
+                display: inline-grid;
+                @media screen and (max-width: 769px) {
+                    justify-content: center;
+                }
                 .openAccount {
                     display: flex;
                     padding: 18px 30px;
