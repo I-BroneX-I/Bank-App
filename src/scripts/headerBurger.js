@@ -13,7 +13,7 @@ function observerWidth() {
         navContainer.classList.remove('activeNavContainer');
         login.classList.remove('activeLogin');
         topNav.classList.remove('closeTopNav');
-        document.body.style.overflow = 'scroll'
+        document.body.style.overflow = 'visible'
     }
 
     topNav.classList.remove('activeTopNav');
@@ -41,7 +41,7 @@ function toggleNav() {
     }
 
     if (document.body.style.overflow == 'hidden') {
-        document.body.style.overflow = 'scroll'
+        document.body.style.overflow = 'visible'
     } else {
         document.body.style.overflow = 'hidden';
     }
