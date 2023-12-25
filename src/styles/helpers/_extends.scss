@@ -1,0 +1,176 @@
+@import './global';
+
+.vector {
+    position: absolute;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-image: url($header-vector-img-path);
+    animation: vector1 1.5s ease-out forwards;
+}
+
+.info_title {
+    font-family: Lexend, sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+
+    @media screen and (max-width: 1200px) {
+        font-size: 38px;
+    }
+
+    @media screen and (max-width: 769px) {
+        font-size: 28px;
+    }
+}
+
+.transaction_circl {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 46px;
+
+    background-color: $main-color;
+
+    img {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+.transaction_item {
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding: 14px 21px;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: stretch;
+    border-radius: 11px;
+    border: 1px solid $border-color;
+    background: $topNav-color;
+
+    @media screen and (max-width: 1200px) {
+        padding: 11px 17px;
+    }
+
+    .item__container {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+
+        @media screen and (max-width: 1200px) {
+            gap: 7px;
+        }
+
+        .item__img {
+            @extend .transaction_circl;
+        }
+
+        .item__text {
+            .item__title {
+                font-family: Lexend, sans-serif;
+                font-size: 15.607px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 150%;
+                /* 23.41px */
+                color: $text-color;
+
+                @media screen and (max-width: 1200px) {
+                    font-size: 12px;
+                }
+            }
+
+            .item__name {
+                font-family: Lexend, sans-serif;
+                font-size: 17.341px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                /* 26.011px */
+                color: $text-color;
+
+                @media screen and (max-width: 1200px) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .item__price {
+        font-family: Lexend, sans-serif;
+        font-size: 20.809px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        /* 31.213px */
+        color: $text-color;
+
+        @media screen and (max-width: 1200px) {
+            font-size: 16px;
+        }
+    }
+
+}
+
+.exchange_item {
+    display: flex;
+    padding: 17.341px;
+    flex-direction: column;
+    gap: 9px;
+    flex: 1 0 0;
+
+    background: $topNav-color;
+
+    border: 1px solid $border-color;
+
+    @media screen and (max-width: 1200px) {
+        padding: 13px;
+    }
+
+    .exchange__title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        align-self: stretch;
+    }
+
+    .exchange__name {
+        font-family: Lexend, sans-serif;
+        font-size: 13.873px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 150%;
+        /* 20.809px */
+        color: $info-text-color;
+
+        @media screen and (max-width: 1200px) {
+            font-size: 11px;
+        }
+    }
+}
+
+.exchange_price {
+    padding: 26px 17px;
+    border: 1px solid $border-color;
+
+    font-family: Lexend, sans-serif;
+    font-size: 17.341px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+
+    color: $text-color;
+    background: $topNav-color;
+
+    @media screen and (max-width: 1200px) {
+        padding: 20px 13px;
+        font-size: 14px;
+    }
+}

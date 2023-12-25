@@ -1,8 +1,8 @@
 @import './../helpers/global';
 @import './../helpers/animation';
+@import './../helpers/extends';
 
 // @media (max-width: 769px) {}
-/**/
 .hidden {
     display: none;
 }
@@ -31,6 +31,79 @@ header {
         background-size: cover;
     }
 
+    .vector {
+        @extend .vector;
+        top: 310px;
+        right: 153px;
+
+        width: 270px;
+        height: 270px;
+        @media screen and (max-width: 769px) {
+            top: 600px;
+            right: 20px;
+        }
+    }
+
+    .vector1 {
+        @extend .vector;
+        top: 310px;
+        right: 260px;
+
+        width: 55px;
+        height: 55px;
+        @media screen and (max-width: 769px) {
+            top: 550px;
+            right: 40px;
+        }
+
+    }
+
+    .vector2 {
+        @extend .vector;
+        top: 406px;
+        right: 153px;
+
+        width: 55px;
+        height: 55px;
+        @media screen and (max-width: 769px) {
+            top: 540px;
+            right: 170px;
+        }
+    }
+
+    .vector3 {
+        @extend .vector;
+        top: 466px;
+        right: 220px;
+
+        width: 224px;
+        height: 224px;
+    }
+
+    .vector4 {
+        @extend .vector;
+        top: 500px;
+        right: 165px;
+
+        width: 110px;
+        height: 110px;
+        @media screen and (max-width: 769px) {
+            top: 540px;
+            right: 100px;
+        }
+    }
+
+    .vector5 {
+        @extend .vector;
+        top: 492px;
+        right: 110px;
+
+        width: 55px;
+        height: 55px;
+    }
+
+
+
     .topNav {
         position: relative;
         z-index: 10;
@@ -50,6 +123,7 @@ header {
 
         @media (max-width: 769px) {
             position: absolute;
+            top: 30px;
             left: 14px;
             right: 14px;
             align-items: start;
@@ -90,7 +164,7 @@ header {
                     padding: 12px 24px;
                     border-radius: 82px;
 
-                    font-family: Lexend;
+                    font-family: Lexend, sans-serif;
                     font-size: 18px;
                     font-style: normal;
                     font-weight: 400;
@@ -139,7 +213,7 @@ header {
             }
 
             .singUp {
-                font-family: Lexend;
+                font-family: Lexend, sans-serif;
                 font-size: 18px;
                 font-style: normal;
                 font-weight: 400;
@@ -158,7 +232,7 @@ header {
                 align-items: center;
                 border-radius: 82px;
 
-                font-family: Lexend;
+                font-family: Lexend, sans-serif;
                 font-size: 18px;
                 font-style: normal;
                 font-weight: 400;
@@ -209,7 +283,7 @@ header {
                 }
 
                 .activeHr {
-                    
+
                     &:first-child {
                         transform: translate(0, 230%) rotate(45deg);
                     }
@@ -241,7 +315,336 @@ header {
         }
     }
 
-    .closeTopNav{
+    .closeTopNav {
         animation: closeTopNav 1s ease-in-out forwards;
     }
+
+    /*  HEADER-CONTENT  */
+
+    .headerContent {
+        margin: 100px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        gap: 120px;
+
+        @media screen and (max-width: 1200px) {
+            gap: 100px;
+        }
+
+        @media screen and (max-width: 992px) {
+            gap: 50px;
+        }
+
+        @media screen and (max-width: 769px) {
+            // padding: 0px 10px;
+            gap: 50px;
+            grid-template-columns: auto;
+            align-items: center;
+            justify-self: center;
+        }
+
+        .headerContent__info {
+            opacity: 0;
+
+            animation: animationContent 1s linear 1.5s forwards;
+
+            @media screen and (max-width: 769px) {
+                display: grid;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .info__tagline {
+                display: flex;
+                padding: 10px 20px 10px 12px;
+                align-items: center;
+                width: max-content;
+                margin-bottom: 20px;
+                gap: 6px;
+                border-radius: 60px;
+
+                font-family: Lexend, sans-serif;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 24px;
+
+                background-color: $border-color;
+                color: $text-color;
+
+                @media screen and (max-width: 1200px) {
+                    padding: 8px 16px 8px 8px;
+                    margin-bottom: 16px;
+
+                    font-size: 14px;
+                }
+
+                @media screen and (max-width: 769px) {
+                    margin: 0 auto;
+                    font-size: 12px;
+                }
+            }
+
+            .info__title {
+                @extend .info_title;
+                margin-bottom: 14px;
+                color: $text-color;
+                @media screen and (max-width: 769px) {
+                    margin-bottom: 8px;
+                }
+
+                span {
+                    @extend .info_title;
+                    color: $main-color;
+                }
+            }
+
+            .info__text {
+                margin-bottom: 50px;
+
+                font-family: Lexend, sans-serif;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 150%;
+                /* 27px */
+                color: $info-text-color;
+
+                @media screen and (max-width: 1200px) {
+                    margin-bottom: 40px;
+
+                    font-size: 16px;
+                }
+
+                @media screen and (max-width: 769px) {
+                    margin-bottom: 30px;
+                    font-size: 14px;
+                }
+            }
+
+            .info__button {
+                display: grid;
+                justify-content: center;
+                .openAccount {
+                    display: flex;
+                    padding: 18px 30px;
+                    align-items: center;
+                    border-radius: 82px;
+
+                    font-family: Lexend, sans-serif;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                    /* 27px */
+                    color: $topNav-color;
+                    background-color: $main-color;
+
+                    @media screen and (max-width: 1200px) {
+                        padding: 14px 24px;
+
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .headerContent__transactions {
+            position: relative;
+            max-width: 500px;
+            padding: 35px;
+            opacity: 0;
+            gap: 26px;
+            border-radius: 10.404px;
+            border: 0.867px solid #262626;
+
+            background: linear-gradient(215deg, rgba(26, 26, 26, 0.00) 0%, #1A1A1A 30%), url($header-transactions-img-path);
+
+            animation: animationContent 1s linear 1.5s forwards;
+
+            @media screen and (max-width: 1200px) {
+                padding: 27px;
+                gap: 20px;
+            }
+            @media screen and (max-width: 769px) {
+                margin: 0 auto; 
+            }
+
+            .transactions__income {
+                position: absolute;
+                left: -60px;
+                top: -43px;
+
+                display: flex;
+                padding: 13.873px 17.341px;
+                align-items: center;
+                gap: 8.67px;
+                border-radius: 10.404px;
+
+                background: $income-bg-color;
+
+                @media screen and (max-width: 1200px) {
+                    padding: 11px 14px;
+                }
+                @media screen and (max-width: 440px) {
+                    left: -10px;
+                }
+                .income__img {
+                    @extend .transaction_circl;
+                }
+
+                .income__text {
+                    .income__price {
+                        font-family: Lexend, sans-serif;
+                        font-size: 17.341px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 150%;
+
+                        color: $text-color;
+
+                        @media screen and (max-width: 1200px) {
+                            font-size: 14px;
+                        }
+                        @media screen and (max-width: 769px) {
+                            font-size: 10px;
+                        }
+                    }
+
+                    .income__title {
+                        font-family: Lexend, sans-serif;
+                        font-size: 13.873px;
+                        font-style: normal;
+                        font-weight: 300;
+                        line-height: 150%;
+
+                        color: $info-text-color;
+
+                        @media screen and (max-width: 1200px) {
+                            font-size: 11px;
+                        }
+                        @media screen and (max-width: 769px) {
+                            font-size: 8px;
+                        }
+
+                    }
+                }
+            }
+
+            .transactions__title {
+                margin-bottom: 17px;
+
+                font-family: Lexend, sans-serif;
+                font-size: 17.341px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 150%;
+
+                color: $text-color;
+
+                @media screen and (max-width: 1200px) {
+                    margin-bottom: 12px;
+
+                    font-size: 14px;
+                }
+            }
+
+            .transactions__item {
+                @extend .transaction_item;
+                z-index: 4;
+
+            }
+
+            .transactions__item-1 {
+                @extend .transaction_item;
+                z-index: 3;
+                opacity: 0.6;
+                width: 90%;
+                margin: 0 auto;
+                margin-top: -5%;
+            }
+
+            .transactions__item-2 {
+                @extend .transaction_item;
+                z-index: 2;
+                opacity: 0.4;
+                width: 80%;
+                margin: 0 auto;
+                margin-top: -5%;
+                margin-bottom: 25px;
+            }
+
+            .exchange__title {
+                font-family: Lexend, sans-serif;
+                font-size: 17.341px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 150%;
+
+                color: $text-color;
+            }
+
+            .exchange__container {
+                margin: 26px 0;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: max-content max-content;
+
+                @media screen and (max-width: 1200px) {
+                    margin: 20px 0;
+                }
+
+                .exchange__item-1 {
+                    @extend .exchange_item;
+                    border-top-left-radius: 10px;
+                }
+
+                .exchange__item-2 {
+                    @extend .exchange_item;
+                    border-top-right-radius: 10px;
+                }
+
+                .exchange__price-1 {
+                    @extend .exchange_price;
+                    border-bottom-left-radius: 10px;
+                }
+
+                .exchange__price-2 {
+                    @extend .exchange_price;
+                    border-bottom-right-radius: 10px;
+                }
+            }
+
+            .exchange__button {
+                display: grid;
+                width: 100%;
+                padding: 14px 26px;
+                justify-content: center;
+                align-items: center;
+
+                border-radius: 70px;
+                background: $income-bg-color;
+
+                @media screen and (max-width: 1200px) {
+                    padding: 11px 20px;
+                }
+
+                button {
+                    font-family: Lexend, sans-serif;
+                    font-size: 15.607px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                    /* 23.41px */
+                    color: $exchange-button-color;
+
+                    @media screen and (max-width: 1200px) {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
 }
